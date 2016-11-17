@@ -26,11 +26,15 @@ class docker {
 
   group { 'docker':
     ensure => present,
+    members => [ 'root', 'vagrant']
+  }
+
+  user { 'root':
+    groups => ['docker'],
   }
 
   user { 'vagrant':
     groups => ['docker'],
-    require => Group['docker'],
   }
 
 }

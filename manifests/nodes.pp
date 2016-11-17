@@ -1,3 +1,9 @@
+node 'master' {
+  include nginx
+  #include sudoers
+  include docker
+}
+
 node 'node01' {
   include nginx
   #include sudoers
