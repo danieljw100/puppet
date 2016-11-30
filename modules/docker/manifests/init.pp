@@ -16,6 +16,7 @@ class docker {
 
   package { 'docker.io':
     ensure => installed,
+    # ensure => '<docker-version>',
     require => [ File['/etc/apt/sources.list.d/docker.list'], Package["linux-image-extra-$::kernelrelease"], Package['linux-image-extra-virtual'] ],
   }
 
